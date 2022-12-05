@@ -4,6 +4,8 @@ import Answer from "./Answer";
 export default function Questions() {
   //   const [questions, setQuestions] = useState([data]);
   //   const [data,setData]=useState([])
+  //   const letterMapping = ["A", "B", "C", "D"];
+
   // s
   let i;
   return (
@@ -11,9 +13,11 @@ export default function Questions() {
       <div>pradedam</div>
 
       <ul>
-        {data.map((data, i) => (
+        {data.map((question, i) => (
           <>
-            <Answer key={i} data={data} i={i}></Answer>
+            <div>{question.question}</div>
+
+            <Answer key={i} question={question} i={i}></Answer>
           </>
         ))}
       </ul>
