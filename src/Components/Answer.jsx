@@ -1,20 +1,47 @@
+import { useState } from "react";
 import data from "../data";
 import { shuffleAnswers } from "../helper.js";
-export default function Answer({ question, i }) {
+import OneAnswer from "./OneAnswer";
+export default function Answer({
+  question,
+  i,
+  setReponse,
+  correctAnswer,
+  correct,
+  click,
+}) {
   const letterMapping = ["A", "B", "C", "D"];
-  //   const unshuffledAnswers = [data.correctAnswer, ...data.incorrectAnswers];
+
   const answers = shuffleAnswers(question);
+  console.log(answers);
+
   return (
     <>
+      {/* <div>negeras{incorrect}</div> */}
       <li>
         <div>
           {" "}
-          {console.log(answers)}
           <div>
             {answers.map((m, i) => (
               <>
                 <div>{letterMapping[i]}</div>
-                <div>{m}</div>
+                <OneAnswer
+                  click={click}
+                  correctAnswer={correctAnswer}
+                  key={i}
+                  correct={correct}
+                  m={m}
+                  setReponse={setReponse}
+                ></OneAnswer>
+                {}
+                {/* <div
+                    className={
+                      click && m === correctAnswer ? "correct" : "incorrect"
+                    }
+                  >
+                    {m}
+                  </div> */}
+                {/* </div> */}
               </>
             ))}
           </div>

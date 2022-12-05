@@ -39,3 +39,9 @@
 .letters {
   background-color: #61dafb;
 }
+.correct {
+  background-color: green;
+}
+/* .incorrect {
+  color: red;
+} */
