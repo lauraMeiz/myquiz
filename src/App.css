@@ -40,8 +40,11 @@
   background-color: #61dafb;
 }
 .correct {
-  background-color: green;
+  background-color: rgb(19, 241, 182);
 }
-/* .incorrect {
+.neutre {
+  background-color: rgb(234, 229, 245);
+}
+.incorrect {
   color: red;
-} */
+}

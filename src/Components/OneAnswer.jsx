@@ -4,13 +4,13 @@ export default function OneAnswer({
   setReponse,
   click,
   correctAnswer,
-
-  i,
 }) {
   return (
     <>
       <div
-        className={click && m === correctAnswer ? "correct" : "incorrect"}
+        className={
+          click && m === correctAnswer && correct ? "correct" : "neutre"
+        }
         onClick={() => setReponse(m)}
       >
         {m}
