@@ -1,23 +1,30 @@
-import data from "../data";
+import datas from "../datas.js";
 import { useState } from "react";
 import Answer from "./Answer";
-import unshuffledAnswers, { shuffleAnswers } from "../helper";
+import React from "react";
+
 export default function Questions() {
   const [correct, setCorrect] = useState(0);
-  const [incorrect, setIncorrect] = useState(0);
-  const [select, setSelect] = useState(0);
   const [click, setClick] = useState(false);
   const [next, setNext] = useState(0);
+  const [data, setData] = useState(datas);
 
   const setReponse = (answer) => {
+    setClick(true);
     const prev = [...data];
 
     prev.filter(
       (f) =>
         f.correctAnswer === answer && setCorrect((correct) => (correct += 1))
     );
+    newQuestion();
+  };
+  const reset = () => {
+    setNext(0);
+    setCorrect(0);
+    setClick(false);
 
-    setClick(true);
+    console.log(data);
   };
 
   const nextQuestion = () => {
@@ -32,32 +39,33 @@ export default function Questions() {
 
   return (
     <>
-      <div>pradedam</div>
       <div>
-        {" "}
-        kiek {correct}/{data.length}
+        Total {correct}/{data.length}
       </div>
 
+      <div>{correct === data.length ? "Wow, nice" : null}</div>
       <ul>
         {data.map((question, i) => (
           <>
-            <div>{i === next && question.question}</div>
+            <div key={i}>
+              <div>{i === next && question.question}</div>
 
-            {i === next && (
-              <Answer
-                key={i}
-                question={question}
-                correctAnswer={question.correctAnswer}
-                incorrectAnswer={question.incorrectAnswers}
-                setReponse={setReponse}
-                correct={correct}
-                click={click}
-              ></Answer>
-            )}
+              {i === next && (
+                <Answer
+                  question={question}
+                  correctAnswer={question.correctAnswer}
+                  incorrectAnswer={question.incorrectAnswers}
+                  setReponse={setReponse}
+                  correct={correct}
+                  click={click}
+                ></Answer>
+              )}
+            </div>
           </>
         ))}
       </ul>
-      <button onClick={newQuestion}>Next</button>
+      {/* <button onClick={newQuestion}>Next</button> */}
+      <button onClick={reset}>Try again</button>
     </>
   );
 }

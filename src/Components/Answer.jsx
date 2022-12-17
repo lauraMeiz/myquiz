@@ -7,6 +7,7 @@ export default function Answer({
   correctAnswer,
   correct,
   click,
+  incorrect,
 }) {
   const letterMapping = ["A", "B", "C", "D"];
 
@@ -14,23 +15,22 @@ export default function Answer({
 
   return (
     <>
-      <div className="neutre">
-        <div>
-          {answers.map((m, i) => (
-            <>
-              <div>{letterMapping[i]}</div>
-              <OneAnswer
-                click={click}
-                correctAnswer={correctAnswer}
-                key={i}
-                correct={correct}
-                m={m}
-                setReponse={setReponse}
-              ></OneAnswer>
-            </>
-          ))}
-        </div>
-      </div>
+      {answers.map((m, index) => (
+        <>
+          <li key={i}>
+            <div>{letterMapping[index]}</div>
+            <OneAnswer
+              click={click}
+              correctAnswer={correctAnswer}
+              correct={correct}
+              incorrect={incorrect}
+              m={m}
+              setReponse={setReponse}
+              letterMapping={letterMapping}
+            ></OneAnswer>
+          </li>
+        </>
+      ))}
     </>
   );
 }
