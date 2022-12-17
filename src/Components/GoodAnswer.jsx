@@ -1,3 +1,10 @@
+import { useState } from "react";
+// import datas from "../datas.js";
+
 export default function GoodAnswer() {
-  return <></>;
+  return (
+    <>
+      <div>{}</div>
+    </>
+  );
 }

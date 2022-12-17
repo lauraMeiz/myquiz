@@ -98,3 +98,11 @@ button:hover {
   background-color: rgb(135, 166, 156);
   color: #282c34;
 }
+
+.correct {
+  color: rgb(49, 78, 49);
+  font-weight: bolder;
+}
+.incorrect {
+  color: rgb(125, 49, 49);
+}

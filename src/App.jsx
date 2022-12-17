@@ -1,4 +1,6 @@
 import "./App.css";
+import AnswerButton from "./Components/AnswerButton";
+import GoodAnswer from "./Components/GoodAnswer";
 import Questions from "./Components/Questions";
 
 function App() {
@@ -7,6 +9,7 @@ function App() {
     <div className="App">
       <h1>Quiz</h1>
       <Questions></Questions>
+      <AnswerButton></AnswerButton>
     </div>
   );
 }
