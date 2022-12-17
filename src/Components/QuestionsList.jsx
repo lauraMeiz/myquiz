@@ -39,7 +39,7 @@ export default function Questions() {
 
   return (
     <>
-      <div>
+      <div className="total">
         Total {correct}/{data.length}
       </div>
 
@@ -47,8 +47,8 @@ export default function Questions() {
       <ul>
         {data.map((question, i) => (
           <>
-            <div key={i}>
-              <div>{i === next && question.question}</div>
+            <div key={i} className="question-column">
+              <div className="question">{i === next && question.question}</div>
 
               {i === next && (
                 <Answer
@@ -64,7 +64,7 @@ export default function Questions() {
           </>
         ))}
       </ul>
-      {/* <button onClick={newQuestion}>Next</button> */}
+
       <button onClick={reset}>Try again</button>
     </>
   );

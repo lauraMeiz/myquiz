@@ -36,10 +36,65 @@
     transform: rotate(360deg);
   }
 }
-.letters {
-  background-color: #61dafb;
+
+li {
+  list-style: none;
+  align-content: space-around;
+  border: 3px solid rgb(63, 116, 116);
 }
-.correct {
+.question {
+  flex-direction: row;
+  width: 400px;
+  margin: 0px calc(50% - 200px);
+  font-weight: bolder;
+}
+.oneAnswer {
+  flex-direction: row;
+  width: 400px;
+  text-align: left;
+  padding: 0 10px 0 10px;
+}
+.answer {
+  width: 400px;
+  margin: 0px calc(50% - 200px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 5px 0 5px 0;
+  letter-spacing: 1px;
+}
+.answer-letter {
+  padding: 0 10px 0 10px;
+  border: 2px solid rgb(63, 116, 116);
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bolder;
+  color: rgb(63, 116, 116);
+}
+.answer-letter:hover {
+  background-color: rgb(63, 116, 116);
+  color: rgb(210, 238, 228);
+  font-weight: bolder;
+}
+.total {
+  color: rgb(68, 110, 97);
+  font-weight: bolder;
+}
+button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(68, 110, 97);
+  color: #fff;
+  border: transparent;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+}
+button:hover {
+  background-color: rgb(135, 166, 156);
+  color: #282c34;
+}
+/* .correct {
   background-color: rgb(19, 241, 182);
 }
 .neutre {
@@ -47,4 +102,4 @@
 }
 .incorrect {
   color: red;
-}
+} */

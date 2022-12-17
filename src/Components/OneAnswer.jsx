@@ -6,12 +6,16 @@ export default function OneAnswer({
   correctAnswer,
   select,
   setSelect,
+  letterMapping,
+  index,
 }) {
+  console.log(correctAnswer, m, correct);
   return (
     <>
-      <div key={m} onClick={() => setReponse(m)}>
-        {m}
-      </div>
+      <li className="answer" onClick={() => setReponse(m)}>
+        <div className="answer-letter">{letterMapping[index]}</div>
+        <div className="oneAnswer">{m}</div>
+      </li>
     </>
   );
 }

@@ -17,18 +17,19 @@ export default function Answer({
     <>
       {answers.map((m, index) => (
         <>
-          <li key={i}>
-            <div>{letterMapping[index]}</div>
-            <OneAnswer
-              click={click}
-              correctAnswer={correctAnswer}
-              correct={correct}
-              incorrect={incorrect}
-              m={m}
-              setReponse={setReponse}
-              letterMapping={letterMapping}
-            ></OneAnswer>
-          </li>
+          {/* <li className="answer" key={index}>
+            <div className="answer-letter">{letterMapping[index]}</div> */}
+          <OneAnswer
+            click={click}
+            correctAnswer={correctAnswer}
+            correct={correct}
+            incorrect={incorrect}
+            m={m}
+            setReponse={setReponse}
+            letterMapping={letterMapping}
+            index={index}
+          ></OneAnswer>
+          {/* </li> */}
         </>
       ))}
     </>
