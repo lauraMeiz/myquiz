@@ -64,18 +64,23 @@ li {
   padding: 5px 0 5px 0;
   letter-spacing: 1px;
 }
+.answer:hover {
+  background-color: rgb(93, 158, 158);
+  color: white;
+}
 .answer-letter {
   padding: 0 10px 0 10px;
   border: 2px solid rgb(63, 116, 116);
   border-radius: 50%;
   cursor: pointer;
   font-weight: bolder;
-  color: rgb(63, 116, 116);
+  color: rgb(68, 100, 100);
 }
 .answer-letter:hover {
   background-color: rgb(63, 116, 116);
   color: rgb(210, 238, 228);
   font-weight: bolder;
+  z-index: 99;
 }
 .total {
   color: rgb(68, 110, 97);
