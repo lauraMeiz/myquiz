@@ -1,5 +1,5 @@
 import "./App.css";
-import Questions from "./Components/QuestionsList";
+import Questions from "./Components/Questions";
 
 function App() {
   // const [data, setData] = useState(datas);
