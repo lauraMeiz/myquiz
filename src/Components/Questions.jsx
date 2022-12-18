@@ -2,16 +2,25 @@ import datas from "../datas.js";
 import { useState } from "react";
 import Answer from "./Answer";
 import React from "react";
+import AnswerButton from "./AnswerButton.jsx";
 
 export default function Questions() {
   const [correct, setCorrect] = useState(0);
   const [click, setClick] = useState(false);
   const [next, setNext] = useState(0);
-  const [data, setData] = useState(datas);
+  const [allData, setAllData] = useState(datas);
+  const [modal, setModal] = useState(false);
 
+  const show = () => {
+    setAllData(allData);
+    setModal(true);
+  };
+  const close = () => {
+    setModal(false);
+  };
   const setReponse = (answer) => {
     setClick(true);
-    const prev = [...data];
+    const prev = [...allData];
 
     prev.filter(
       (f) =>
@@ -23,13 +32,12 @@ export default function Questions() {
     setNext(0);
     setCorrect(0);
     setClick(false);
-
-    console.log(data);
+    setModal(false);
   };
 
   const nextQuestion = () => {
     setNext((next) => (next += 1));
-    return data[next];
+    return allData[next];
   };
 
   const newQuestion = () => {
@@ -40,12 +48,12 @@ export default function Questions() {
   return (
     <>
       <div className="total">
-        Total {correct}/{data.length}
+        Total {correct}/{allData.length}
       </div>
 
-      <div>{correct === data.length ? "Wow, nice" : null}</div>
+      <div>{correct === allData.length ? "Wow, nice" : null}</div>
       <ul>
-        {data.map((question, i) => (
+        {allData.map((question, i) => (
           <>
             <div key={i} className="question-column">
               <div className="question">{i === next && question.question}</div>
@@ -66,6 +74,12 @@ export default function Questions() {
       </ul>
 
       <button onClick={reset}>Try again</button>
+      <AnswerButton
+        show={show}
+        allData={allData}
+        modal={modal}
+        close={close}
+      ></AnswerButton>
     </>
   );
 }
